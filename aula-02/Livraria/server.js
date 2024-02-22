@@ -2,13 +2,24 @@ import express from "express"
 
 const app = express();
 
+const livros = [
+  {id: 1, nome: "Senhor dos aneis"},
+  {id: 2, nome: "ABBABA"},
+  {id: 3, nome: "SCACA"}
+];
+
 app.get("/", (req, res) => {
   res.status(200).send("Curso BackEnd JS OxeTech")
+});
+
+app.get("/livros", (req, res) => {
+  res.status(200).json(livros);
 });
 
 app.listen(3000, () => {
   console.log("Servidor rodando em http://localhost:3000")
 });
+
 
 
 
