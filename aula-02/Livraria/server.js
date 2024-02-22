@@ -1,16 +1,32 @@
-import http from "http"
+import express from "express"
 
-const rotas = {
-  "/": "livraria OxeTech",
-  "/livros": "Harry Potter e a pedra filosofal",
-  "/autor": "J. K. Rowling"
-}
+const app = express();
 
-const server = http.createServer((req, res) => {
-  res.writeHead(200, {"Content-Type": "text/plain"})
-  res.end(rotas[req.url])
+app.get("/", (req, res) => {
+  res.status(200).send("Curso BackEnd JS OxeTech")
 });
 
-server.listen(3000, () => {
-  console.log("Servidor rodando em: http://localhost:3000")
+app.listen(3000, () => {
+  console.log("Servidor rodando em http://localhost:3000")
 });
+
+
+
+
+// http:
+// import http from "http"
+
+// const rotas = {
+//   "/": "livraria OxeTech",
+//   "/livros": "Harry Potter e a pedra filosofal",
+//   "/autores": "J. K. Rowling"
+// }
+
+// const server = http.createServer((req, res) => {
+//   res.writeHead(200, {"Content-Type": "text/plain"})
+//   res.end(rotas[req.url])
+// });
+
+// server.listen(3000, () => {
+//   console.log("Servidor rodando em: http://localhost:3000")
+// });
