@@ -4,8 +4,8 @@ const app = express();
 
 const livros = [
   {id: 1, nome: "Senhor dos aneis"},
-  {id: 2, nome: "ABBABA"},
-  {id: 3, nome: "SCACA"}
+  {id: 2, nome: "Harry Potter"},
+  {id: 3, nome: "Star Wars"}
 ];
 
 app.get("/", (req, res) => {
